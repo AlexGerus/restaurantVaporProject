@@ -8,13 +8,14 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.77.1"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.84.0"),
         // 🗄 An ORM for SQL and NoSQL databases.
         .package(url: "https://github.com/vapor/fluent.git", from: "4.8.0"),
         // 🐘 Fluent driver for Postgres.
-        .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.7.2"),
+        .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.8.0"),
         // 🍃 An expressive, performant, and extensible templating language built for Swift.
         .package(url: "https://github.com/vapor/leaf.git", from: "4.2.4"),
+        .package(url: "https://github.com/vapor/apns.git", from: "4.0.0"),
     ],
     targets: [
         .executableTarget(
@@ -23,7 +24,8 @@ let package = Package(
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
                 .product(name: "Leaf", package: "leaf"),
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "APNS", package: "apns")
             ]
         ),
         .testTarget(name: "AppTests", dependencies: [
